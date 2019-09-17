@@ -1,42 +1,69 @@
-<ul>
-  {.repeated section items}
+<nav id="navigation"
+  class="navigation">
+  
+  <div class="navigation-top">
+    <div class="container">
+      <div class="d-flex align-items-center ">
+        <div>
 
-      <li class="{.section collection}{typeLabel}-collection{.end}{.section active} active-link{.end}{.folder?} folder{.end}{.if folderActive} active-link active-folder{.end}{.section externalLink} external-link{.end}">
+          <header class="navigation-header">
+            <a href="/"
+              class="navigation-home-link d-flex align-items-center">
+              <img class="navigation-logo" src="{website.logoImageUrl}" />
+              <h1 class="navigation-title">{website.siteTitle}</h1>
+            </a>
+          </header>
 
-        {.folder?}
+        </div>
+        <div class="ml-4">
 
-          <a>{collection.navigationTitle}</a>
-          <div class="subnav">
-            <ul>
-              {.repeated section items}
-                {.collection?}
-                  <li class="{collection.typeLabel}-collection{.section active} active-link{.end}">
-                    <a href="{collection.fullUrl}">{collection.navigationTitle}</a>
-                  </li>
-                {.end}
-                {.section externalLink}
-                  <li class="external-link">
-                    <a href="{url}"{.section newWindow} target="_blank"{.end}>{title}</a>
-                  </li>
-                {.end}
-              {.end}
-            </ul>
+          <div id="navigation-hamburger"
+            class="navigation-hamburger">
+            <i class="navigation-hamburger-icon"></i>
           </div>
 
-        {.or}
+        </div>
 
-          {.section collection}
-            <a href="{fullUrl}">{navigationTitle}</a>
+        {.section website}
+          {.if socialAccounts}
+            <div class="ml-auto">
+              <ul class="social-media-list">
+                  {.repeated section socialAccounts}
+                  <li class="social-media-list-item">
+                    <a{.if profileUrl} href="{profileUrl}" target="_blank"{.or} title="{screenname}"{.end} 
+                      class="social-link social-{serviceName}">
+                    </a>
+                  </li>
+                  {.end}
+                </ul>
+            </div>
           {.end}
-
-          {.section externalLink}
-            <a href="{url}"{.section newWindow} target="_blank"{.end}>{title}</a>
-          {.end}
-
-
         {.end}
 
-      </li>
+      </div>
 
-  {.end}
-</ul>
+    </div>
+  </div>
+
+  <div class="navigation-bottom">
+    <div class="container">
+      <ul class="navigation-link-list list-unstyled d-md-flex justify-content-between align-items-center">
+        {.repeated section items}
+        <li class="navigation-link-list-item flex-grow-1 text-center {.section active} active-link{.end}">
+
+          {.section collection}
+          {.if homepage}
+          {.or}
+            <a href="{fullUrl}"
+              class="navigation-link">{navigationTitle}</a>
+          {.end}
+          {.end}
+
+        </li>
+        {.end}
+      </ul>
+    </div>
+  </div>
+
+</nav>
+<script src="/scripts/navigation.js" combo="true"></script>
