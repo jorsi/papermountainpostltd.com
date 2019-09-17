@@ -1,0 +1,97 @@
+.about {
+    padding-top: 64px;
+    
+    .about-section {
+        padding: 32px 0;
+        margin: 0 auto;
+        @media (min-width: 1200px) {
+            max-width: 1110px;
+        }
+    }
+    .about-section-title {
+        font-family: var(--font-family-system);
+        font-size: 64px;
+        font-weight: 600;
+        line-height: 1;
+    }
+    .about-splash {
+        padding: 64px 0;
+    }
+    .about-title {
+        font-family: var(--font-family-system);
+        font-size: 48px;
+        font-weight: 100;
+    }
+
+    .team-members-list {
+        flex-wrap: wrap;
+        margin: 0;
+        padding: 0;
+    }
+    .team-members-list-item {
+        @media (min-width: 768px) {
+            flex: 1 0 50%;
+        }
+        // @media (min-width: 992px) {
+        //     flex: 1 0 25%;
+        // }
+    }
+
+    .team-member {
+        height: 56.5vw;
+        overflow: hidden;
+        font-family: var(--font-family-system);
+        padding: 32px;
+        position: relative;
+        z-index: 1;
+
+        &:hover  {
+            .team-member-image {
+                opacity: 1;
+            }
+            .team-member-name {
+                opacity: .33;
+            }
+            .team-member-title {
+                opacity: .33;
+            }
+        }
+    }
+    .team-member-image {
+        height: 100%;
+        left: 0;
+        position: absolute;
+        object-fit: cover;
+        opacity: .33;
+        top: 0;
+        transition: opacity 60ms ease-in;
+        width: 100%;
+        z-index: -2;
+    }
+    .team-member-image-mask {
+        // background-color: rgba(0,0,0,.3);
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: -1;
+    }
+    .team-member-name {
+        font-size: 24px;
+        font-weight: 700;
+        transition: opacity 60ms ease-in;
+    }
+    .team-member-title {
+        font-size: 16px;
+        font-weight: 100;
+        transition: opacity 60ms ease-in;
+    }
+    .team-member-more-work-link {
+        background-color: rgba(255,255,255,.8);
+        color: black;
+        display: inline-block;
+        padding: 8px 16px;
+        &:hover { text-decoration: none; }
+    }
+}

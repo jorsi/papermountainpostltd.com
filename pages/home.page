@@ -1,0 +1,27 @@
+<div class="home">
+    <div class="splash-image-container">
+        <squarespace:query collection="splash-images" limit="1">
+            {.repeated section items}
+                <img class="splash-image" 
+                src="{assetUrl}"
+                alt="Paper Mountain Post Production Studio">
+            {.end}
+        </squarespace:query>
+    </div>
+
+    <div class="container">
+        <div class="d-md-flex">
+            <div class="ml-auto">
+                <div class="home-banner d-md-flex align-items-center">
+                    <img src="{website.logoImageUrl}" 
+                        class="home-logo" />
+                    <h1 class="home-title">Paper Mountain Post</h1>
+                </div>
+
+                <squarespace:navigation navigationId="mainNav" template="home-navigation" />
+
+            </div>
+        </div>
+    </div>
+    
+</div>

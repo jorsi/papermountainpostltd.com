@@ -1,0 +1,51 @@
+<div class="about">
+
+  {.section collection}
+  <section class="about-splash">
+    <div class="container">
+      <div class="d-flex">
+        <div class="w-50 mr-5">
+          <h2 class="about-title">{title}</h2>
+        </div>
+        <div class="w-50">
+            {description}
+        </div>
+      </div>
+    </div>
+  </section>
+  {.end}
+
+  <squarespace:query collection="team-members">
+  <script>console.log({@|json-pretty});</script>
+  <section id="team-members"
+    class="about-section pb-0">
+
+    <ul class="team-members-list d-md-flex align-items-stretch">
+      {.repeated section items}
+      <li class="team-members-list-item list-unstyled">
+        <div class="team-member">
+          <img src="{assetUrl}"
+            class="team-member-image" />
+          <div class="team-member-image-mask"></div>
+          <div class="d-flex align-items-end h-100">
+            <div class="mt-auto">
+            <h4 class="team-member-name">{title}</h4>
+            <div class="team-member-title">{body}</div>
+            {.if customContent.moreWorkHref}
+            <a href={customContent.moreWorkHref}
+              class="team-member-more-work-link">
+              {customContent.moreWorkText}
+              <i class="fas fa-chevron-right ml-2"></i>
+            </a>
+            {.end}
+          </div>
+          </div>
+        </div>
+      </li>
+      {.end}
+    </ul>
+
+  </section>
+
+</squarespace:query>
+</div>

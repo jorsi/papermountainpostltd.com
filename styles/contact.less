@@ -1,0 +1,79 @@
+.contact {
+    background-color: var(--primary);
+    color: var(--dark);
+    min-height: 100vh;
+    padding-top: 64px;
+    padding-bottom: 1px;
+
+    .contact-container {
+        margin: 0 auto;
+        max-width: 320px;
+        padding: 0 15px;
+        @media (min-width: 992px) {
+            max-width: 992px;
+        }
+    }
+
+    .contact-flex {
+        @media (min-width: 992px) {
+            align-items: center;
+            display: flex;
+            justify-content: center;
+        }
+        .contact-splash {
+            order: 2;
+        }
+        .contact-person:first-of-type {
+            order: 1;
+        }
+        .contact-person:first-of-type {
+            order: 3;
+        }
+    }
+    .contact-splash {
+        height: 320px;
+        margin: 0 -15px 32px -15px;
+        position: relative;
+        width: 320px;
+        z-index: 1;
+    }
+    .contact-logo-image {
+        display: block;
+        height: 100%;
+        margin: 0 auto;
+        padding: 16px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: -1;
+    }
+    .contact-logo-title {
+        color: rgba(0,0,0,.4);
+        font-family: var(--font-family-system);
+        font-size: 18px;
+        font-weight: 400;
+        margin: 0;
+        text-transform: uppercase;
+    }
+    
+    .contact-person {
+        margin-bottom: 32px;
+        font-family: var(--font-family-system);
+    }
+    .contact-name {
+        font-size: 24px;
+    }
+    .contact-email {
+        font-size: 16px;
+        margin-bottom: 8px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    .contact-phone {
+        font-size: 16px;
+    }
+    
+    
+}

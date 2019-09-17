@@ -1,0 +1,44 @@
+<div class="services">
+
+  <section class="services-splash">
+    <div class="container">
+      <div class="d-md-flex">
+        <div class="w-md-50 mr-5">
+          <h2 class="services-title">Services</h2>
+        </div>
+        <div class="w-md-50">
+          {.section collection}
+            {description}
+          {.end}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <squarespace:query collection="post-production-services">
+
+  <section id="post-production"
+    class="services-section m-0">
+    <div class="container">
+      <h3 class="services-section-title text-right">Post Production</h3>
+      
+      <ul class="services-list list-unstyled mb-0">
+        {.repeated section items}
+          <li class="services-item">
+            <div class="d-md-flex">
+              <div class="services-item-image-container mb-4 mb-md-0">
+                <img src="{assetUrl}"
+                  class="services-item-image" />
+              </div>
+              <div class="ml-md-4">
+                <h4 class="services-item-title">{title}</h4>
+                <p class="services-item-body">{body}</p>
+              </div>
+            </div>
+          </li>
+        {.end}
+      </ul>
+    </div>
+  </section>
+  </squarespace:query>
+</div>

@@ -1,0 +1,70 @@
+<div class="works">
+  
+  <squarespace:query collection="videos" featured="true" limit="1">
+  {.repeated section items}
+  <script>console.log({@|json-pretty});</script>
+  <section class="feature-section">
+    <div class="d-lg-flex align-items-center">
+      <div class="feature-left">
+        <div class="feature-embed">{structuredContent.oembed.html}</div>
+      </div>
+      <div class="feature-right">
+      <div class="feature-content">
+        <div class="container">
+          <h3 class="feature-title">{title}</h3>
+          <div class="feature-body">{body}</div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+  {.end}
+  </squarespace:query>
+
+  <squarespace:query collection="videos">
+  <script>console.log({@|json-pretty});</script>
+  <section id="videos"
+    class="works-section">
+    <h3 class="videos-title">Our work</h3>
+
+    <ul class="videos-list list-unstyled d-md-flex">
+      {.repeated section items}
+        {.if starred}
+        {.or}
+        <li class="videos-item">
+            <div class="video">
+              <a class="video-link"
+              href="{externalLink.fullUrl}">
+                <img src="{assetUrl}"
+                  alt="{title}"
+                  class="video-image" />
+                <div class="video-play-button">
+                  <i class="fas fa-play"></i>
+                </div>
+              </a>
+            </div>
+        </li>
+      {.end}
+      {.end}
+    </ul>
+    
+  </section>
+  </squarespace:query>
+
+  <squarespace:query collection="posters">
+  <section id="posters"
+    class="works-section">
+    <ul class="posters-list d-md-flex flex-wrap list-unstyled mb-0">
+        {.repeated section items}
+          <li class="posters-list-item">
+              <div class="poster">
+                <img src="{assetUrl}"
+                  alt="{title}"
+                  class="poster-image" />
+              </div>
+          </li>
+        {.end}
+      </ul>
+  </section>
+  </squarespace:query>
+</div>
