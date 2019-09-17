@@ -1,6 +1,6 @@
 <div class="home">
     <div class="splash-image-container">
-        <squarespace:query collection="splash-images" limit="1">
+        <squarespace:query collection="images" featured="true" limit="1">
             {.repeated section items}
                 <img class="splash-image" 
                 src="{assetUrl}"

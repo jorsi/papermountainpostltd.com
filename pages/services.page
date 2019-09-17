@@ -15,12 +15,39 @@
     </div>
   </section>
 
-  <squarespace:query collection="post-production-services">
+  <squarespace:query collection="audio-post-services">
 
-  <section id="post-production"
+  <section id="audio-post-services"
     class="services-section m-0">
     <div class="container">
-      <h3 class="services-section-title text-right">Post Production</h3>
+      <h3 class="services-section-title text-right">Audio Post Services</h3>
+      
+      <ul class="services-list list-unstyled mb-0">
+        {.repeated section items}
+          <li class="services-item">
+            <div class="d-md-flex">
+              <div class="services-item-image-container mb-4 mb-md-0">
+                <img src="{assetUrl}"
+                  class="services-item-image" />
+              </div>
+              <div class="ml-md-4">
+                <h4 class="services-item-title">{title}</h4>
+                <p class="services-item-body">{body}</p>
+              </div>
+            </div>
+          </li>
+        {.end}
+      </ul>
+    </div>
+  </section>
+  </squarespace:query>
+
+  <squarespace:query collection="video-post-services">
+
+  <section id="video-post-services"
+    class="services-section m-0">
+    <div class="container">
+      <h3 class="services-section-title text-right">Video Post Services</h3>
       
       <ul class="services-list list-unstyled mb-0">
         {.repeated section items}

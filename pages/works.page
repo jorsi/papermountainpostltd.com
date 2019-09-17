@@ -3,7 +3,8 @@
   <squarespace:query collection="videos" featured="true" limit="1">
   {.repeated section items}
   <script>console.log({@|json-pretty});</script>
-  <section class="feature-section">
+  <section id="feature"
+    class="feature-section">
     <div class="d-lg-flex align-items-center">
       <div class="feature-left">
         <div class="feature-embed">{structuredContent.oembed.html}</div>
@@ -21,46 +22,50 @@
   {.end}
   </squarespace:query>
 
-  <squarespace:query collection="videos">
-  <script>console.log({@|json-pretty});</script>
-  <section id="videos"
+  <squarespace:query collection="episodic">
+  <section id="episodic"
     class="works-section">
-    <h3 class="videos-title">Our work</h3>
-
-    <ul class="videos-list list-unstyled d-md-flex">
-      {.repeated section items}
-        {.if starred}
-        {.or}
-        <li class="videos-item">
-            <div class="video">
-              <a class="video-link"
-              href="{externalLink.fullUrl}">
+    <ul class="works-list d-md-flex flex-wrap list-unstyled mb-0">
+        {.repeated section items}
+          <li class="works-list-item">
+              <div class="work">
                 <img src="{assetUrl}"
                   alt="{title}"
-                  class="video-image" />
-                <div class="video-play-button">
-                  <i class="fas fa-play"></i>
-                </div>
-              </a>
-            </div>
-        </li>
-      {.end}
-      {.end}
-    </ul>
-    
+                  class="work-image" />
+              </div>
+          </li>
+        {.end}
+      </ul>
   </section>
   </squarespace:query>
 
-  <squarespace:query collection="posters">
-  <section id="posters"
+  <squarespace:query collection="feature-films">
+  <section id="feature-films"
     class="works-section">
-    <ul class="posters-list d-md-flex flex-wrap list-unstyled mb-0">
+    <ul class="works-list d-md-flex flex-wrap list-unstyled mb-0">
         {.repeated section items}
-          <li class="posters-list-item">
-              <div class="poster">
+          <li class="works-list-item">
+              <div class="work">
                 <img src="{assetUrl}"
                   alt="{title}"
-                  class="poster-image" />
+                  class="work-image" />
+              </div>
+          </li>
+        {.end}
+      </ul>
+  </section>
+  </squarespace:query>
+
+  <squarespace:query collection="short-films">
+  <section id="short-films"
+    class="works-section">
+    <ul class="works-list d-md-flex flex-wrap list-unstyled mb-0">
+        {.repeated section items}
+          <li class="works-list-item">
+              <div class="work">
+                <img src="{assetUrl}"
+                  alt="{title}"
+                  class="work-image" />
               </div>
           </li>
         {.end}
