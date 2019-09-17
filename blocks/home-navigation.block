@@ -1,0 +1,15 @@
+<nav class="home-links">
+    <ul class="list-unstyled">
+    {.repeated section items}
+    {.section collection}
+    {.if homepage}
+    {.or}
+        <li>
+            <a href="{fullUrl}"
+                class="home-link">{navigationTitle}</a>
+        </li>
+    {.end}
+    {.end}
+    {.end}
+    </ul>
+</nav>
