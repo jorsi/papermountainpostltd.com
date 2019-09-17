@@ -9,7 +9,7 @@
   <script src="https://kit.fontawesome.com/28144df9a9.js"></script>
   {squarespace-headers}
 </head>
-<body class="{squarespace.page-classes}" id="{squarespace.page-id}">
+<body class="page-{collection.typeName}" id="{squarespace.page-id}">
   <squarespace:navigation navigationId="mainNav" template="navigation" />
 
   <main class="main-content" data-content-field="main-content">
