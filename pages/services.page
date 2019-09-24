@@ -1,19 +1,19 @@
 <div class="services">
 
+  {.section collection}
   <section class="services-splash">
     <div class="container">
       <div class="d-md-flex">
         <div class="w-md-50 mr-5">
-          <h2 class="services-title">Services</h2>
+          <h2 class="services-title">{title}</h2>
         </div>
         <div class="w-md-50">
-          {.section collection}
             {description}
-          {.end}
         </div>
       </div>
     </div>
   </section>
+  {.end}
 
   <squarespace:query collection="post-services">
 
