@@ -12,7 +12,7 @@
     z-index: 1;
   }
   .navigation-hamburger {
-    width: 25px;
+    width: 32px;
     cursor: pointer;
   }
   .navigation-hamburger::before,
@@ -109,16 +109,19 @@
     border-bottom: 3px solid transparent;
     color: var(--primary-tone);
     display: block;
-    padding: 8px 16px;
+    padding: 16px;
     text-transform: uppercase;
     transition: 
       border-bottom 60ms ease-in,
       color 60ms ease-in;
     letter-spacing: -.05em;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 700;
   }
   @media(min-width: 768px) {
+    .navigation-link {
+      padding: 8px 16px;
+    }
     .navigation-link:hover {
       border-bottom: 3px solid var(--primary-tint);
       color: var(--primary-tint);
