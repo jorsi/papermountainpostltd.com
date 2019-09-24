@@ -31,10 +31,10 @@
             <div class="mt-auto">
             <h4 class="team-member-name">{title}</h4>
             <div class="team-member-title">{body}</div>
-            {.if customContent.moreWorkHref}
-            <a href={customContent.moreWorkHref}
+            {.if sourceUrl}
+            <a href={sourceUrl}
               class="team-member-more-work-link">
-              {customContent.moreWorkText}
+              See More Work
               <i class="fas fa-chevron-right ml-2"></i>
             </a>
             {.end}
