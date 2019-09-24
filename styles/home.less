@@ -1,16 +1,15 @@
 .home {
     position: relative;
-    min-height: 100vh;
 
     .splash-image-container {
         height: 100%;
-        position: absolute;
+        position: fixed;
         top: 0;
         left: 0;
         width: 100%;
     }
     .splash-image-container::after {
-        background: linear-gradient(to top, rgba(0,0,0,0), rgba(0,0,0,1));
+        background: linear-gradient(to top, rgba(34,34,37,.4), rgba(34,34,37,1));
         content: "";
         height: 100%;
         left: 0;
@@ -18,7 +17,7 @@
         top: 0;
         width: 100%;
         @media(min-width: 768px) {
-            background: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,1));
+            background: linear-gradient(to right, rgba(34,34,37,.4), rgba(34,34,37,1));
         }
     }
     .splash-image {
@@ -28,7 +27,7 @@
         border-radius: 2px;
     }
     .home-banner {
-        padding-top: 64px;
+        padding-top: 32px;
         position: relative;
         width: 100%;
     }
@@ -60,14 +59,14 @@
         border-radius: 2px;
         color: var(--link-color);
         display: block;;
+        font-family: var(--font-family-sans-serif);
+        font-size: 18px;
         margin: 8px 0;
         padding: 16px 0;
         position: relative;
-        font-family: var(--font-family-sans-serif);
+        text-decoration: underline;
         &:hover {
-            text-decoration: none;
             color: var(--link-color-hover);
-
         }
     }
 }
