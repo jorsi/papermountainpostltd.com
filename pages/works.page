@@ -25,7 +25,9 @@
   <squarespace:query collection="episodic">
   <section id="episodic"
     class="works-section">
-    <ul class="works-list d-md-flex flex-wrap list-unstyled mb-0">
+    <div class="container works-container">
+      <h3 class="works-title">{collection.title}</h3>
+      <ul class="works-list d-md-flex list-unstyled mb-0">
         {.repeated section items}
           <li class="works-list-item">
               <div class="work">
@@ -36,13 +38,16 @@
           </li>
         {.end}
       </ul>
+    </div>
   </section>
   </squarespace:query>
 
   <squarespace:query collection="feature-films">
-  <section id="feature-films"
+  <section id="episodic"
     class="works-section">
-    <ul class="works-list d-md-flex flex-wrap list-unstyled mb-0">
+    <div class="container works-container">
+      <h3 class="works-title">{collection.title}</h3>
+      <ul class="works-list d-md-flex list-unstyled mb-0">
         {.repeated section items}
           <li class="works-list-item">
               <div class="work">
@@ -53,13 +58,16 @@
           </li>
         {.end}
       </ul>
+    </div>
   </section>
   </squarespace:query>
 
   <squarespace:query collection="short-films">
-  <section id="short-films"
+  <section id="episodic"
     class="works-section">
-    <ul class="works-list d-md-flex flex-wrap list-unstyled mb-0">
+    <div class="container works-container">
+      <h3 class="works-title">{collection.title}</h3>
+      <ul class="works-list d-md-flex list-unstyled mb-0">
         {.repeated section items}
           <li class="works-list-item">
               <div class="work">
@@ -70,6 +78,7 @@
           </li>
         {.end}
       </ul>
+    </div>
   </section>
   </squarespace:query>
 </div>
