@@ -1,20 +1,20 @@
-<ul class="navigation-list">
+<ul class="site-link-list">
 
   {.repeated section items}
-    <li class="navigation-list-item">
+    <li class="site-link-list-item">
         <a href="{externalLink.url}"
-          class="navigation-link">{externalLink.title}</a>
+          class="site-link">{externalLink.title}</a>
     </li>
   {.end}
 
   <script>console.log({@|json-pretty})</script>
   {.if website.socialAccounts}
     {.repeated section socialAccounts}
-      <li class="navigation-list-item social-media">
+      <li class="site-link-list-item social-media">
         <a {.if profileUrl} href="{profileUrl}" 
           target="_blank"{.or} 
           title="{screenname}"{.end} 
-          class="navigation-link social-{serviceName}">
+          class="site-link social-{serviceName}">
         </a>
       </li>
     {.end}

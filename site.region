@@ -24,11 +24,272 @@
     <squarespace:navigation navigationId="mainNav" template="navigation" />
   </nav>
 
-  <main class="main-content"
-    data-content-field="main-content">
-    {squarespace.main-content}
+  <main>
+    <header id="header">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+
+            <h1 class="site-title">{website.siteTitle}</h1>
+            <h2 class="site-tagline">{website.siteTagLine}</h2>
+            <nav class="header-navigation">
+              <squarespace:navigation navigationId="mainNav" template="navigation" />
+            </nav>
+          
+          </div>
+          <div class="col">
+
+              <img src="assets/logo.svg" 
+                class="site-logo" />
+
+          </div>
+        </div>
+      </div>
+  </header>
+
+  <section id="services">
+    <div class="container">
+      
+      <div class="row">
+        <div class="col">
+
+          <h3 class="section-title">
+            <squarespace:block-field id="section2-title" columns="12"/>
+          </h3>
+
+        </div>
+        <div class="col">
+
+            <p class="section-description">
+              <squarespace:block-field id="section2-description" columns="12"/>
+            </p>
+
+        </div>
+      </div>
+
+      <squarespace:query collection="services">
+        <div class="services-container">
+          <ul class="services-list list-unstyled mb-0 row align-items-stretch">
+              {.repeated section items}
+                <li class="services-item col-md-6">
+                    <div class="services-item-content">
+                      <img src="{assetUrl}"
+                        class="services-item-image" />
+                      <h4 class="services-item-title">{title}</h4>
+                      <div class="services-item-body">{body}</div>
+                    </div>
+                </li>
+              {.end}
+            </ul>
+        </div>
+      </squarespace:query>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      
+      <div class="row">
+        <div class="col">
+
+          <h3 class="section-title">
+            <squarespace:block-field id="section3-title" columns="12"/>
+          </h3>
+
+        </div>
+        <div class="col">
+
+            <p class="section-description">
+              <squarespace:block-field id="section3-description" columns="12"/>
+            </p>
+
+        </div>
+      </div>
+
+
+      <squarespace:query collection="team-members">
+        <div class="team-members-container">
+          <ul class="team-members-list">
+            {.repeated section items}
+            <li class="team-members-list-item list-unstyled">
+              <div class="team-member">
+                <img src="{assetUrl}"
+                  class="team-member-image" />
+                <div class="team-member-image-mask"></div>
+                <div class="d-flex align-items-end h-100">
+                  <div class="mt-auto">
+                  <h4 class="team-member-name">{title}</h4>
+                  <div class="team-member-title">{body}</div>
+                  {.if sourceUrl}
+                  <a href={sourceUrl}
+                    class="team-member-more-work-link">
+                    See More Work
+                    <i class="fas fa-chevron-right ml-2"></i>
+                  </a>
+                  {.end}
+                </div>
+                </div>
+              </div>
+            </li>
+            {.end}
+          </ul>
+        </div>
+      </squarespace:query>
+    </div>
+  </section>
+
+  <section id="works">
+    <div class="container">
+
+      <div class="row">
+        <div class="col">
+
+          <h3 class="section-title">
+            <squarespace:block-field id="section5-title" columns="12"/>
+          </h3>
+
+        </div>
+        <div class="col">
+
+            <p class="section-description">
+              <squarespace:block-field id="section5-description" columns="12"/>
+            </p>
+
+        </div>
+      </div>
+
+      <squarespace:query collection="videos" featured="true" limit="1">
+        {.repeated section items}
+        <section id="feature"
+          class="feature-section">
+          <div class="d-lg-flex align-items-center">
+            <div class="feature-left">
+              <div class="feature-embed">{structuredContent.oembed.html}</div>
+            </div>
+            <div class="feature-right">
+            <div class="feature-content">
+              <div class="container">
+                <h3 class="feature-title">{title}</h3>
+                <div class="feature-body">{body}</div>
+              </div>
+            </div>
+          </div>
+          </div>
+        </section>
+        {.end}
+        </squarespace:query>
+
+        <squarespace:query collection="episodic">
+        <section id="episodic"
+          class="works-section">
+          <div class="container works-container">
+            <h3 class="works-title">{collection.title}</h3>
+            <ul class="works-list d-md-flex list-unstyled mb-0">
+              {.repeated section items}
+                <li class="works-list-item">
+                    <div class="work">
+                      <img src="{assetUrl}"
+                        alt="{title}"
+                        class="work-image" />
+                    </div>
+                </li>
+              {.end}
+            </ul>
+          </div>
+        </section>
+        </squarespace:query>
+
+        <squarespace:query collection="feature-films">
+        <section id="episodic"
+          class="works-section">
+          <div class="container works-container">
+            <h3 class="works-title">{collection.title}</h3>
+            <ul class="works-list d-md-flex list-unstyled mb-0">
+              {.repeated section items}
+                <li class="works-list-item">
+                    <div class="work">
+                      <img src="{assetUrl}"
+                        alt="{title}"
+                        class="work-image" />
+                    </div>
+                </li>
+              {.end}
+            </ul>
+          </div>
+        </section>
+        </squarespace:query>
+
+        <squarespace:query collection="short-films">
+        <section id="episodic"
+          class="works-section">
+          <div class="container works-container">
+            <h3 class="works-title">{collection.title}</h3>
+            <ul class="works-list d-md-flex list-unstyled mb-0">
+              {.repeated section items}
+                <li class="works-list-item">
+                    <div class="work">
+                      <img src="{assetUrl}"
+                        alt="{title}"
+                        class="work-image" />
+                    </div>
+                </li>
+              {.end}
+            </ul>
+          </div>
+        </section>
+        </squarespace:query>
+    </div>
+  </section>
+
+  
+
   </main>
 
+  <footer id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+
+          <p>
+            <squarespace:block-field id="footer-tagline" columns="12"/>
+          </p>
+
+          <squarespace:query collection="contacts">
+          {.repeated section items}
+          <div class="contact-person">
+            <h4 class="contact-name">{title}</h4>
+            {.if customContent.email}
+            <a href="mailto:{customContent.email}"
+              class="contact-email d-block">
+              <i class="fas fa-envelope"></i>
+              <span class="ml-2">{customContent.email}</span>
+            </a>
+            {.end}
+            {.if customContent.phone}
+            <a href="tel:{customContent.phone}"
+              class="contact-phone d-block">
+              <i class="fas fa-phone"></i>
+              <span class="ml-2">{customContent.phone}</span>
+            </a>
+            {.end}
+          </div>
+          {.end}
+          </squarespace:query>
+
+        </div>
+        <div class="col">
+
+            <img src="assets/logo.svg"
+              class="footer-logo" />
+            <h1 class="footer-title">{website.siteTitle}</h1>
+            <nav class="footer-navigation">
+              <squarespace:navigation navigationId="mainNav" template="navigation" />
+            </nav>
+
+        </div>
+      </div>
+    </div>
+  </footer>
   <squarespace:script src="navigation.js" combo="true"/>
 
   {squarespace-footers}
