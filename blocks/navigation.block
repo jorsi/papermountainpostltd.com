@@ -7,7 +7,6 @@
     </li>
   {.end}
 
-  <script>console.log({@|json-pretty})</script>
   {.if website.socialAccounts}
     {.repeated section socialAccounts}
       <li class="site-link-list-item social-media">
