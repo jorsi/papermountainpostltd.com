@@ -65,25 +65,22 @@
           </div>
         </div>
 
-      <div class="services-container mt-5">
-
-        <div class="service">
-            <squarespace:block-field id="service-1" />
-        </div>
-
-        <div class="service">
-            <squarespace:block-field id="service-2" />
-        </div>
-
-        <div class="service">
-            <squarespace:block-field id="service-3" />
-        </div>
-
-        <div class="service">
-            <squarespace:block-field id="service-4" />
-        </div>
-
-      </div>
+        <squarespace:query collection="services">
+          <div class="services-container mt-5">
+            <ul class="services-list list-unstyled">
+                {.repeated section items}
+                  <li class="services-list-item">
+                      <div class="service">
+                        <img src="{assetUrl}"
+                          class="service-image" />
+                        <div class="service-title">{title}</div>
+                        <div class="service-body">{body}</div>
+                      </div>
+                  </li>
+                {.end}
+              </ul>
+          </div>
+        </squarespace:query>
 
       </div>
     </section>
@@ -99,15 +96,25 @@
           <squarespace:block-field id="section3-description" columns="12"/>
         </p>
 
-        <div class="team-container">
-          <div class="team-member">
-            <squarespace:block-field id="team-member-1" />
-          </div>
-          <div class="team-member">
-            <squarespace:block-field id="team-member-2" />
-          </div>
-        </div>
-
+        <squarespace:query collection="team">
+            <ul class="team-members-list mt-5">
+              {.repeated section items}
+              <li class="team-members-list-item list-unstyled">
+                  <img src="{assetUrl}"
+                    class="team-member-image" />
+                  <h4 class="team-member-name">{title}</h4>
+                  <div class="team-member-title">{body}</div>
+                  {.if sourceUrl}
+                  <a href={sourceUrl}
+                    class="team-member-more-work-link">
+                    See More Work
+                    <i class="fas fa-chevron-right ml-2"></i>
+                  </a>
+                  {.end}
+              </li>
+              {.end}
+            </ul>
+        </squarespace:query>
       </div>
     </section>
 
@@ -131,20 +138,56 @@
           </div>
         </div>
 
-        <div class="episodic-container">
-          <h3>Episodic</h3>
-          <squarespace:block-field id="episodic" />
-        </div>
+        <squarespace:query collection="works" category="episodic">
+        <section class="episodic-container mt-5">
+            <h3 class="works-title">Episodic</h3>
+            <ul class="works-list list-unstyled">
+              {.repeated section items}
+                <li class="works-list-item">
+                    <div class="work">
+                      <img src="{assetUrl}"
+                        alt="{title}"
+                        class="work-image" />
+                    </div>
+                </li>
+              {.end}
+            </ul>
+        </section>
+        </squarespace:query>
 
-        <div class="feature-films-container">
-          <h3>Feature Films</h3>
-          <squarespace:block-field id="feature-films" />
-        </div>
+        <squarespace:query collection="works" category="feature-film">
+        <section class="episodic-container mt-5">
+            <h3 class="works-title">Feature Films</h3>
+            <ul class="works-list list-unstyled">
+              {.repeated section items}
+                <li class="works-list-item">
+                    <div class="work">
+                      <img src="{assetUrl}"
+                        alt="{title}"
+                        class="work-image" />
+                    </div>
+                </li>
+              {.end}
+            </ul>
+        </section>
+        </squarespace:query>
 
-        <div class="short-films-container">
-          <h3>Short Films</h3>
-          <squarespace:block-field id="short-films" />
-        </div>
+        <squarespace:query collection="works" category="short-film">
+        <section class="episodic-container mt-5">
+            <h3 class="works-title">Short Films</h3>
+            <ul class="works-list list-unstyled">
+              {.repeated section items}
+                <li class="works-list-item">
+                    <div class="work">
+                      <img src="{assetUrl}"
+                        alt="{title}"
+                        class="work-image" />
+                    </div>
+                </li>
+              {.end}
+            </ul>
+        </section>
+        </squarespace:query>
 
       </div>
     </section>
@@ -159,7 +202,7 @@
             <squarespace:block-field id="footer-tagline" columns="12"/>
           </p>
 
-          <squarespace:query collection="contacts">
+          <squarespace:query collection="team">
           <ul class="contact-list list-unstyled m-0 mt-5 p-0">
             {.repeated section items}
               <li class="contacts-list-item">
