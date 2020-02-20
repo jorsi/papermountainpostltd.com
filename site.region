@@ -11,7 +11,6 @@
   <meta name=”robots” content=”index,follow”>
   <meta name="revisit-after" content="7 days">
   <meta name="distribution" content="web">
-  <meta http-equiv="refresh" content="30">
   <meta name=”robots” content=”noodp”>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <script src="https://kit.fontawesome.com/28144df9a9.js"></script>
@@ -254,6 +253,7 @@
       </div>
     </div>
   </footer>
+
   <squarespace:script src="navigation.js" combo="true"/>
 
   {squarespace-footers}
