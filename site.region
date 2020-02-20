@@ -1,22 +1,34 @@
 <!doctype html>
 <html>
 <head>
+  <meta charset="utf-8">
+  <meta name="language" content="english"> 
+  <meta http-equiv="content-type" content="text/html">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <!-- Bootstrap CDN -->
+  <meta name="description" content="Paper Mountain Post is a post-production film studio with locations in Toronto and Los Angeles.">
+  <meta name="keywords" content="toronto post production, film post production, post production, adr, vo, voiceovers, sound design, foley, recording, colouring">
+  <meta name=”robots” content=”index,follow”>
+  <meta name="revisit-after" content="7 days">
+  <meta name="distribution" content="web">
+  <meta http-equiv="refresh" content="30">
+  <meta name=”robots” content=”noodp”>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <!-- Font Awesome kit -->
   <script src="https://kit.fontawesome.com/28144df9a9.js"></script>
   {squarespace-headers}
 </head>
-<body class="page-{collection.typeName}" id="{squarespace.page-id}">
+<body id="{squarespace.page-id}"
+      class="page-{collection.typeName}" >
+  
   <squarespace:navigation navigationId="mainNav" template="navigation" />
 
-  <main class="main-content" data-content-field="main-content">
+  <main class="main-content" 
+    data-content-field="main-content">
     {squarespace.main-content}
   </main>
 
   <squarespace:script src="site.js" combo="true"/>
+  
   {squarespace-footers}
 </body>
 </html>
