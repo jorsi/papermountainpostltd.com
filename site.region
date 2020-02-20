@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <meta name="language" content="english"> 
+  <meta name="language" content="english">
   <meta http-equiv="content-type" content="text/html">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -19,16 +19,18 @@
 </head>
 <body id="{squarespace.page-id}"
       class="page-{collection.typeName}" >
-  
-  <squarespace:navigation navigationId="mainNav" template="navigation" />
 
-  <main class="main-content" 
+  <nav id="navigation">
+    <squarespace:navigation navigationId="mainNav" template="navigation" />
+  </nav>
+
+  <main class="main-content"
     data-content-field="main-content">
     {squarespace.main-content}
   </main>
 
-  <squarespace:script src="site.js" combo="true"/>
-  
+  <squarespace:script src="navigation.js" combo="true"/>
+
   {squarespace-footers}
 </body>
 </html>

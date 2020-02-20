@@ -5,7 +5,7 @@
 
           <h1 class="site-title">{website.siteTitle}</h1>
           <h2 class="site-tagline"><squarespace:block-field id="tagline" columns="12"/></h2>
-
+          <squarespace:navigation navigationId="mainNav" template="navigation" />
         </div>
         <div class="col">
 
@@ -250,7 +250,7 @@
           <img src="assets/logo.svg"
             class="footer-logo" />
           <h1 class="footer-title">{website.siteTitle}</h1>
-          
+
       </div>
 
     </div>
