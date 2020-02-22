@@ -14,6 +14,8 @@
   <meta name=”robots” content=”noodp”>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <script src="https://kit.fontawesome.com/28144df9a9.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/macy@2"></script>
+  <squarespace:script src="index.js" combo="true"/>
   {squarespace-headers}
 </head>
 <body>
@@ -40,7 +42,7 @@
 
     
     <section id="services">
-      <div class="container">
+      <div class="container max720">
 
         <squarespace:block-field 
           id="section2-title"
@@ -73,74 +75,56 @@
     </section>
 
     <section id="works">
+      <div class="container max720">
+
+        <squarespace:block-field 
+          id="section5-title" 
+          class="section-title" />
+        
+        <squarespace:block-field 
+          id="section5-description"
+          class="section-description"/>
+
+      </div>
+
       <div class="container">
 
-        <div class="row">
-          <div class="col-md-3">
+        <squarespace:query collection="work">
+        <div id="works-grid">
+          {.repeated section items}
+            <div class="work">
 
-            <h3 class="section-title">
-              <squarespace:block-field id="section5-title" columns="12"/>
-            </h3>
+              <img src="{assetUrl}"
+                alt="{title}"
+                class="work-image" />
 
-          </div>
-          <div class="col-md-9">
+              {.if sourceUrl}
+              <a href={sourceUrl}
+                target="_blank"
+                class="work-content">
+              {.or}
+              <a href="javascript:void(0)"
+                class="work-content">
+              {.end}
+                
+                <h6 class="work-title">{title}</h6>
 
-              <p class="section-description">
-                <squarespace:block-field id="section5-description" columns="12"/>
-              </p>
+                {.if categories}
+                <div class="work-categories">
+                  <ul class="list-unstyled">
+                    {.repeated section categories}
+                    <li class="work-category">{@}</li>
+                    {.end}
+                  </ul>
+                </div>
+                {.end}
 
-          </div>
+              </a>
+
+            </div>
+
+          {.end}
         </div>
-
-        <squarespace:query collection="works" category="episodic">
-        <section class="episodic-container mt-5">
-            <h3 class="works-title">Episodic</h3>
-            <ul class="works-list list-unstyled">
-              {.repeated section items}
-                <li class="works-list-item">
-                    <div class="work">
-                      <img src="{assetUrl}"
-                        alt="{title}"
-                        class="work-image" />
-                    </div>
-                </li>
-              {.end}
-            </ul>
-        </section>
-        </squarespace:query>
-
-        <squarespace:query collection="works" category="feature-film">
-        <section class="episodic-container mt-5">
-            <h3 class="works-title">Feature Films</h3>
-            <ul class="works-list list-unstyled">
-              {.repeated section items}
-                <li class="works-list-item">
-                    <div class="work">
-                      <img src="{assetUrl}"
-                        alt="{title}"
-                        class="work-image" />
-                    </div>
-                </li>
-              {.end}
-            </ul>
-        </section>
-        </squarespace:query>
-
-        <squarespace:query collection="works" category="short-film">
-        <section class="episodic-container mt-5">
-            <h3 class="works-title">Short Films</h3>
-            <ul class="works-list list-unstyled">
-              {.repeated section items}
-                <li class="works-list-item">
-                    <div class="work">
-                      <img src="{assetUrl}"
-                        alt="{title}"
-                        class="work-image" />
-                    </div>
-                </li>
-              {.end}
-            </ul>
-        </section>
         </squarespace:query>
 
       </div>
@@ -148,7 +132,7 @@
     
 
     <section id="about">
-      <div class="container">
+      <div class="container max720">
         
         <h3 class="section-title">
           <squarespace:block-field id="section3-title" columns="12"/>
@@ -199,7 +183,7 @@
   </main>
 
   <footer id="footer">
-    <div class="container">
+    <div class="container max720">
       <div class="row">
         <div class="col-md footer-contact">
 
@@ -250,7 +234,6 @@
     </div>
   </footer>
 
-  <squarespace:script src="navigation.js" combo="true"/>
 
   {squarespace-footers}
 </body>
