@@ -3,4 +3,69 @@
     color: var(--colour-dark);
     padding: 64px 0;
 
+    .services-list-item {
+        &:not(:first-of-type) {
+            margin-top: 32px;
+        }
+    }
+
+    .service {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        height: 100%;
+    }
+
+    .service-image {
+        border: 8px solid var(--colour-green);
+        background-color: var(--colour-dark);
+        border-radius: 50%;
+        width: 120px;
+        height: 120px;
+        margin-bottom: -60px;
+        padding: 32px;
+        object-fit: contain;
+        z-index: 1;
+    }
+    .service-content {
+        background-color: var(--colour-dark);
+        border-radius: 3px;
+        color: var(--colour-light);
+        flex: 1 0 auto;
+        padding: 60px 16px 16px 16px;
+    }
+    .service-title {
+        color: rgba(255,255,255,.9);
+        font-style: italic;
+        font-weight: 900;
+        margin-top: 16px;
+        text-transform: uppercase;
+    }
+    .service-body {
+        color: rgba(255,255,255,.8);
+        line-height: 1.2;
+        margin-top: 16px;
+    }
+
+    @media (min-width: 576px) {
+        padding: 120px 0;
+
+        .section-title {
+            // text-align: right;
+        }
+    }
+    @media (min-width:768px) {
+        .services-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .services-list-item {
+            flex: 0 0 calc(50% - 1em);
+            &:not(:first-of-type) {
+                margin-top: 0;
+            }
+        }
+    }
 }

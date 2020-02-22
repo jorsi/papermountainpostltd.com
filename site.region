@@ -24,46 +24,31 @@
 
   <main>
     <header id="header">
-      <div class="container">
-        <div class="row">
-          <div class="col-md header-left">
+      <div class="header-logo">
+          {@|apply header-logo.block}
+      </div>
+      <div class="header-content">
 
-              <h1 class="site-title">{website.siteTitle}</h1>
-              <h2 class="site-tagline">{website.siteTagLine}</h2>
-              <nav class="header-navigation">
-                <squarespace:navigation navigationId="mainNav" template="navigation" />
-              </nav>
-          
-          </div>
-          <div class="col-md header-right">
-
-              <img src="assets/logo.svg" 
-                class="site-logo" />
-
-          </div>
-        </div>
+          <h1 class="site-title">{website.siteTitle}</h1>
+          <h2 class="site-tagline">{website.siteTagLine}</h2>
+          <nav class="header-navigation">
+            <squarespace:navigation navigationId="mainNav" template="navigation" />
+          </nav>
+      
       </div>
     </header>
 
+    
     <section id="services">
       <div class="container">
 
-        <div class="row">
-          <div class="col-md-3">
+        <squarespace:block-field 
+          id="section2-title"
+          class="section-title" />
 
-            <h3 class="section-title">
-              <squarespace:block-field id="section2-title" columns="12"/>
-            </h3>
-
-          </div>
-          <div class="col-md-9">
-
-              <p class="section-description">
-                <squarespace:block-field id="section2-description" columns="12"/>
-              </p>
-
-          </div>
-        </div>
+        <squarespace:block-field 
+          id="section2-description" 
+          class="section-description" />
 
         <squarespace:query collection="services">
           <div class="services-container mt-5">
@@ -73,8 +58,10 @@
                       <div class="service">
                         <img src="{assetUrl}"
                           class="service-image" />
-                        <div class="service-title">{title}</div>
-                        <div class="service-body">{body}</div>
+                        <div class="service-content">
+                          <h5 class="service-title">{title}</h5>
+                          <p class="service-body">{body}</p>
+                        </div>
                       </div>
                   </li>
                 {.end}
@@ -82,39 +69,6 @@
           </div>
         </squarespace:query>
 
-      </div>
-    </section>
-
-    <section id="about">
-      <div class="container">
-        
-        <h3 class="section-title">
-          <squarespace:block-field id="section3-title" columns="12"/>
-        </h3>
-  
-        <p class="section-description">
-          <squarespace:block-field id="section3-description" columns="12"/>
-        </p>
-
-        <squarespace:query collection="team">
-            <ul class="team-members-list mt-5">
-              {.repeated section items}
-              <li class="team-members-list-item list-unstyled">
-                  <img src="{assetUrl}"
-                    class="team-member-image" />
-                  <h4 class="team-member-name">{title}</h4>
-                  <div class="team-member-title">{body}</div>
-                  {.if sourceUrl}
-                  <a href={sourceUrl}
-                    class="team-member-more-work-link">
-                    See More Work
-                    <i class="fas fa-chevron-right ml-2"></i>
-                  </a>
-                  {.end}
-              </li>
-              {.end}
-            </ul>
-        </squarespace:query>
       </div>
     </section>
 
@@ -191,6 +145,57 @@
 
       </div>
     </section>
+    
+
+    <section id="about">
+      <div class="container">
+        
+        <h3 class="section-title">
+          <squarespace:block-field id="section3-title" columns="12"/>
+        </h3>
+  
+        <p class="section-description">
+          <squarespace:block-field id="section3-description" columns="12"/>
+        </p>
+
+        <squarespace:query collection="team">
+            <ul class="team-members-list mt-5">
+              {.repeated section items}
+              <li class="team-members-list-item list-unstyled">
+                  <div class="team-member">
+                    <div class="team-member-image-container">
+                      <img src="{assetUrl}"
+                        class="team-member-image" />
+                      </div>
+                      <div class="team-member-content">
+                        <div class="team-member-name">{title}</div>
+                        {.if customContent.position}
+                        <div class="team-member-position">{customContent.position}</div>
+                        {.end}
+                        <div class="team-member-description">{body}</div>
+                        {.if customContent.imdb}
+                        <a href={customContent.imdb}
+                          target="_blank"
+                          class="team-member-link imdb">
+                          <i class="fab fa-imdb"></i>
+                        </a>
+                        {.end}
+                        {.if customContent.site}
+                        <a href={customContent.site}
+                          target="_blank"
+                          class="team-member-link site">
+                          <i class="fas fa-home"></i>
+                        </a>
+                        {.end}
+                      </div>
+                  </div>
+              </li>
+              {.end}
+            </ul>
+        </squarespace:query>
+      </div>
+    </section>
+
   </main>
 
   <footer id="footer">

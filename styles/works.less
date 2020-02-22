@@ -3,4 +3,13 @@
     color: var(--colour-dark);
     padding: 64px 0;
 
+    @media (min-width:768px) {
+        .works-list {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .works-list-item {
+            flex: 0 0 33.33%;
+        }
+    }
 }

@@ -2,4 +2,33 @@
     background-color: var(--colour-light);
     color: var(--colour-dark);
     padding: 64px 0;
+
+    .team-members-list {
+        flex-direction: row-reverse;
+    }
+    .team-members-list-item {
+        &:not(:first-of-type) {
+            margin-top: 32px;
+        }
+    }
+    .team-member-name {
+        font-weight: 900;
+    }
+    .team-member-position {
+        font-weight: 900;
+    }
+    @media (min-width: 768px) {
+        .team-member {
+            display: flex;
+        }
+        .team-members-list-item:nth-child(odd) .team-member {
+            flex-direction: row-reverse;
+        }
+        .team-member-image-container {
+            flex: 0 0 50%;
+        }
+        .team-member-content {
+            flex: 0 0 50%;
+        }
+    }
 }

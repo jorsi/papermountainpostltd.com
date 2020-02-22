@@ -1,16 +1,42 @@
 #header {
-    padding: 64px 0;
+    margin: 0 auto;
+    max-width: 768px;
 
+    .header-logo {
+        margin: 0 auto;
+        max-width: 320px;
+        .sky{
+            fill:#7dcccc;
+        }
+        .mountain{
+            fill:#eba396;
+            stroke: #22222f;
+            stroke-width: 1px;
+        }
+        .border {
+            fill: transparent;
+            // stroke: #22222f;
+            // stroke-width: 32px;
+        }
+    }
+
+    .header-content {
+        padding: 16px;
+        text-align: center;
+    }
     .site-title {
         color: var(--colour-pink);
         text-transform: uppercase;
-        font-size: 24px;
+        font-size: 18px;
+        font-style: italic;
+        font-weight: 900;
     }
     .site-tagline {
-        font-size: 24px;
+        font-size: 18px;
     }
 
     .header-navigation {
+        display: none;
         ul {
             list-style: none;
         }
@@ -19,16 +45,57 @@
             &:not(:first-of-type) {
                 margin-left: 16px;
             }
+
+            a {
+                text-transform: uppercase;
+                font-size: 16px;
+            }
+        }
+    }
+    
+    @media (min-width: 576px) {
+        align-items: center;
+        display: flex;
+        justify-content: center;;
+        position: relative;
+        .header-content {
+            flex: 1 0 50%;
+            text-align: left;
+            padding: 0 32px;
+        }
+
+        .site-title {
+            font-size: 24px;
+        }
+        .site-tagline {
+        }
+
+        .header-logo {
+            flex: 0 1 50%;
+            min-width: 180px;
+            .border {
+                fill: transparent;
+                stroke: #22222f;
+                stroke-width: 48px;
+            }
+        }
+        .header-logo svg {
+            position: relative;
+            transform-origin: center right;
+            transform: translate(0, 0) scale(1.5);
         }
     }
 
     @media (min-width: 768px) {
-        .header-left {
-            align-items: flex-end;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            text-align: right;
+        .site-title {
+            font-size: 28px;
+        }
+        .site-tagline {
+            font-size: 24px;
+        }
+        .header-navigation {
+            display: block;
         }
     }
+    
 }
