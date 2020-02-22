@@ -1,5 +1,5 @@
 #about {
-    background-color: var(--colour-light);
+    background-color: var(--colour-green);
     color: var(--colour-dark);
     padding: 64px 0;
 
@@ -11,24 +11,39 @@
             margin-top: 32px;
         }
     }
+    .team-member-image-container {
+        border-radius: 50%;
+        overflow: hidden;
+        width: 320px;
+        height: 320px;
+        img {
+            height: 100%;
+            object-fit: cover;
+        }
+    }
     .team-member-name {
         font-weight: 900;
     }
     .team-member-position {
         font-weight: 900;
     }
+    .team-member-description {
+    }
+    .team-member-link {
+        font-size: 24px;
+    }
     @media (min-width: 768px) {
         .team-member {
             display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
         .team-members-list-item:nth-child(odd) .team-member {
             flex-direction: row-reverse;
         }
+        .team-member-content,
         .team-member-image-container {
-            flex: 0 0 50%;
-        }
-        .team-member-content {
-            flex: 0 0 50%;
+            flex: 0 0 calc(50% - 2rem);
         }
     }
 }

@@ -133,30 +133,35 @@
 
     <section id="about">
       <div class="container max720">
-        
-        <h3 class="section-title">
-          <squarespace:block-field id="section3-title" columns="12"/>
-        </h3>
-  
-        <p class="section-description">
-          <squarespace:block-field id="section3-description" columns="12"/>
-        </p>
 
+        <squarespace:block-field 
+          id="section3-title" 
+          class="section-title" />
+        
+        <squarespace:block-field 
+          id="section3-description" 
+          class="section-description" />
+        
         <squarespace:query collection="team">
             <ul class="team-members-list mt-5">
               {.repeated section items}
               <li class="team-members-list-item list-unstyled">
                   <div class="team-member">
+                    
                     <div class="team-member-image-container">
                       <img src="{assetUrl}"
                         class="team-member-image" />
-                      </div>
-                      <div class="team-member-content">
-                        <div class="team-member-name">{title}</div>
-                        {.if customContent.position}
-                        <div class="team-member-position">{customContent.position}</div>
-                        {.end}
-                        <div class="team-member-description">{body}</div>
+                    </div>
+                    
+                    <div class="team-member-content">
+
+                      <h4 class="team-member-name">{title}</h4>
+
+                      {.if customContent.position}
+                      <div class="team-member-position">{customContent.position}</div>
+                      {.end}
+
+                      <div class="team-member-links">
                         {.if customContent.imdb}
                         <a href={customContent.imdb}
                           target="_blank"
@@ -164,6 +169,7 @@
                           <i class="fab fa-imdb"></i>
                         </a>
                         {.end}
+
                         {.if customContent.site}
                         <a href={customContent.site}
                           target="_blank"
@@ -172,6 +178,11 @@
                         </a>
                         {.end}
                       </div>
+                      
+                      <div class="team-member-description">{body}</div>
+
+                    </div>
+
                   </div>
               </li>
               {.end}
