@@ -3,10 +3,10 @@
     <defs>
         <style>
             .clip {
-                clip-path: url(#header-clip-path);
+                clip-path: url(#navigation-clip-path);
             }
         </style>
-        <clipPath id="header-clip-path">
+        <clipPath id="navigation-clip-path">
             <circle cx="160" cy="160" r="160" />
         </clipPath>
     </defs>

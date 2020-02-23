@@ -21,7 +21,41 @@
 <body>
 
   <nav id="navigation">
-    <squarespace:navigation navigationId="mainNav" template="navigation" />
+    
+      <div id="navigation-desktop">
+        <h1 class="navigation-title">{website.siteTitle}</h1>
+
+        <div class="navigation-logo">
+          {@|apply navigation-logo.block}
+        </div>
+
+        <div class="navigation-links">
+          <squarespace:navigation navigationId="mainNav" template="navigation" />
+        </div>
+        
+      </div>
+
+      <div id="navigation-mobile">
+
+        <div class="navigation-bar">
+
+          <div class="navigation-logo">
+            {@|apply navigation-logo.block}
+          </div>
+
+          <button id="navigation-button">
+            <i class="fas fa-bars"></i>
+          </button>
+
+        </div>
+
+        <div id="navigation-popup">
+            <h1 class="navigation-title">{website.siteTitle}</h1>
+            <div class="navigation-links">
+              <squarespace:navigation navigationId="mainNav" template="navigation" />
+            </div>
+        </div>
+      </div>
   </nav>
 
   <main>
