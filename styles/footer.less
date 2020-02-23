@@ -2,38 +2,26 @@
     padding-top: 64px;
 
     .footer-mountain {
-        transform: translate(0, 20%);
-        margin-top: -20%;
+        margin-top: 32px;
         .mountain {
             stroke: var(--colour-dark)
         }
     }
-    .contacts-list-item {
-        &:not(:first-of-type) {
-            margin-top: 16px;
+    .footer-tagline {
+        strong {
+            font-weight: 900;
         }
-    }
-    .contacts-list-item a:hover {
-        text-decoration: none;
-    }
-
-    .footer-end {
-        align-items: center;
-        display: flex;
-        flex-direction: column;
-    }
-    .footer-logo {
-        max-width: 320px;
     }
     .footer-title {
         color: var(--colour-pink);
         font-size: 24px;
-        margin-top: 16px;
+        margin-top: 32px;
+        text-transform: uppercase;
     }
     .footer-navigation {
         ul {
             list-style: none;
-            margin: 16px 0 0 0;
+            margin: 0;
             padding: 0;
         }
         li {
@@ -43,11 +31,30 @@
             }
         }
     }
+
+    .contacts-list-item {
+        margin-top: 32px;
+
+        &:not(:first-of-type) {
+            margin-top: 16px;
+        }
+    }
+    .contacts-list-item a:hover {
+        text-decoration: none;
+    }
+    .contact-name {
+        color: var(--colour-green);
+        text-transform: uppercase;
+        font-weight: 900;
+    }
+
     
     @media (min-width: 768px) {
-        display: flex;
-        flex-direction: row-reverse;
-
+        
+        .container {
+            display: flex;
+            flex-direction: row-reverse;
+        }
         .footer-content,
         .footer-mountain {
             flex: 0 0 calc(~"50% - 16px");
@@ -60,10 +67,10 @@
             margin-top: 0;
             position: relative;
             svg {
-                position: relative;
-                bottom: -50%;
+                position: absolute;
+                bottom: 0;
                 right: 0;
-                transform: scale(2);
+                transform: scale(3);
                 transform-origin: bottom right;
             }
         }

@@ -19,7 +19,6 @@
   {squarespace-headers}
 </head>
 <body>
-  <div class="site-container">
 
   <nav id="navigation">
     <squarespace:navigation navigationId="mainNav" template="navigation" />
@@ -199,18 +198,19 @@
   </main>
 
   <footer id="footer">
-    <div class="footer-content">
+    <div class="container">
+      <div class="footer-content">
 
           <squarespace:block-field 
             id="footer-tagline" 
             class="footer-tagline" />
 
           <squarespace:query collection="team">
-          <ul class="contact-list list-unstyled m-0 mt-5 p-0">
+          <ul class="contact-list list-unstyled">
             {.repeated section items}
               <li class="contacts-list-item">
 
-                <div class="contact-name">{title}</div>
+                <h5 class="contact-name">{title}</h5>
                 
                 {.if customContent.email}
                 <a href="mailto:{customContent.email}"
@@ -240,14 +240,14 @@
           </nav>
     </div>
 
-    <div class="footer-mountain">
+      <div class="footer-mountain">
 
-      {@|apply footer-mountain.block}
+        {@|apply footer-mountain.block}
 
+      </div>
     </div>
   </footer>
 
   {squarespace-footers}
-  </div>
 </body>
 </html>
