@@ -1,8 +1,13 @@
 #footer {
-    padding: 64px 0;
+    padding-top: 64px;
 
-    .footer-tagline {}
-
+    .footer-mountain {
+        transform: translate(0, 20%);
+        margin-top: -20%;
+        .mountain {
+            stroke: var(--colour-dark)
+        }
+    }
     .contacts-list-item {
         &:not(:first-of-type) {
             margin-top: 16px;
@@ -35,6 +40,31 @@
             display: inline-block;
             &:not(:first-of-type) {
                 margin-left: 16px;
+            }
+        }
+    }
+    
+    @media (min-width: 768px) {
+        display: flex;
+        flex-direction: row-reverse;
+
+        .footer-content,
+        .footer-mountain {
+            flex: 0 0 calc(~"50% - 16px");
+        }
+
+        .footer-content {
+            padding-bottom: 64px;
+        }
+        .footer-mountain {
+            margin-top: 0;
+            position: relative;
+            svg {
+                position: relative;
+                bottom: -50%;
+                right: 0;
+                transform: scale(2);
+                transform-origin: bottom right;
             }
         }
     }

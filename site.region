@@ -19,6 +19,7 @@
   {squarespace-headers}
 </head>
 <body>
+  <div class="site-container">
 
   <nav id="navigation">
     <squarespace:navigation navigationId="mainNav" template="navigation" />
@@ -198,13 +199,11 @@
   </main>
 
   <footer id="footer">
-    <div class="container max720">
-      <div class="row">
-        <div class="col-md footer-contact">
+    <div class="footer-content">
 
-          <p class="footer-tagline">
-            <squarespace:block-field id="footer-tagline" columns="12"/>
-          </p>
+          <squarespace:block-field 
+            id="footer-tagline" 
+            class="footer-tagline" />
 
           <squarespace:query collection="team">
           <ul class="contact-list list-unstyled m-0 mt-5 p-0">
@@ -234,22 +233,21 @@
           </ul>
           </squarespace:query>
 
-        </div>
-        <div class="col-md footer-end">
+          <h1 class="footer-title">{website.siteTitle}</h1>
+          
+          <nav class="footer-navigation">
+            <squarespace:navigation navigationId="mainNav" template="navigation" />
+          </nav>
+    </div>
 
-            <img src="assets/logo.svg"
-              class="footer-logo" />
-            <h1 class="footer-title">{website.siteTitle}</h1>
-            <nav class="footer-navigation">
-              <squarespace:navigation navigationId="mainNav" template="navigation" />
-            </nav>
+    <div class="footer-mountain">
 
-        </div>
-      </div>
+      {@|apply footer-mountain.block}
+
     </div>
   </footer>
 
-
   {squarespace-footers}
+  </div>
 </body>
 </html>
