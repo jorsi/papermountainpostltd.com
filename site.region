@@ -88,9 +88,8 @@
         <squarespace:block-field 
           id="section2-description" 
           class="section-description" />
-      </div>
 
-      <div class="container">
+
         <squarespace:query collection="services">
           <div class="services-container mt-5">
             <ul class="services-list list-unstyled">
