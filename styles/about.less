@@ -8,29 +8,44 @@
     }
     .team-members-list-item {
         &:not(:first-of-type) {
+            border-top: 1px solid rgba(34,34,47,.3);
             margin-top: 32px;
+            padding-top: 32px;
         }
     }
     .team-member-image-container {
+        border: 16px solid var(--colour-dark);
         border-radius: 50%;
+        background-size: cover;
+        background-position: center;
+        margin: 0 auto;
+        max-width: 320px;
         overflow: hidden;
-        width: 320px;
-        height: 320px;
-        img {
-            height: 100%;
-            object-fit: cover;
+        position: relative;
+        &::after {
+            content: "";
+            display: block;
+            padding-bottom: 100%;
         }
     }
+    .team-member-content {
+        margin-top: 32px;
+    }
     .team-member-name {
+        font-size: 24px;
         font-weight: 900;
+        text-transform: uppercase;
     }
     .team-member-position {
-        font-weight: 900;
+        font-weight: 500;
     }
     .team-member-description {
     }
     .team-member-link {
-        font-size: 24px;
+        color: rgba(34,34,47,.7);
+        &:hover {
+            color: rgba(34,34,47,.9);
+        }
     }
     @media (min-width: 768px) {
         .team-member {
@@ -38,12 +53,24 @@
             align-items: center;
             justify-content: space-between;
         }
-        .team-members-list-item:nth-child(odd) .team-member {
-            flex-direction: row-reverse;
+        .team-members-list-item:nth-child(odd)  {
+            .team-member { 
+                flex-direction: row-reverse;
+            }
+            .team-member-content {
+                text-align: right;
+            }
         }
         .team-member-content,
         .team-member-image-container {
-            flex: 0 0 calc(50% - 2rem);
+            flex: 0 0 calc(~"50% - 16px");
+        }
+        .team-member-image-container {
+            max-width: initial;
+            margin: 0;
+        }
+        .team-member-content {
+            margin-top: 0;
         }
     }
 }
