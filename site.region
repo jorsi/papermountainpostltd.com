@@ -60,9 +60,11 @@
 
   <main>
     <header id="header">
+    
       <div class="header-logo">
           {@|apply header-logo.block}
       </div>
+
       <div class="header-content">
 
           <h1 class="site-title">{website.siteTitle}</h1>
@@ -72,6 +74,7 @@
           </nav>
       
       </div>
+
     </header>
 
     
@@ -232,7 +235,7 @@
   </main>
 
   <footer id="footer">
-    <div class="container">
+    <div class="container max720">
       <div class="footer-content">
 
           <squarespace:block-field 
