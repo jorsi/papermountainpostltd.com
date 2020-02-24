@@ -12,7 +12,7 @@
     </defs>
     <g class="clip">
         <circle class="sky" cx="160" cy="160" r="159.5" />
-        <g class="mountain" transform="translate(-22)">
+        <g class="mountain" transform="translate(-22 0)">
             <polygon points="182.72 56.57 169.97 121.05 182.09 127.83 200.13 116.6 182.72 56.57"/>
             <polygon points="182.72 56.57 165.21 94.93 169.97 121.05 182.72 56.57"/>
             <polygon points="187.18 71.92 213.61 108.36 200.13 116.6 187.18 71.92"/>
