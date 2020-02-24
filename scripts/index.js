@@ -1,14 +1,14 @@
-var navigationElement;
-var desktopNavigationElement;
-var mobileNavigationElement;
-var mobileNavigationPopupElement;
-var mobileNavigationButton;
-var isMobileMenuOpen = false;
-var lastScrollY = 0;
+let navigationElement;
+let desktopNavigationElement;
+let mobileNavigationElement;
+let mobileNavigationPopupElement;
+let mobileNavigationButton;
+let isMobileMenuOpen = false;
+let lastScrollY = 0;
 
 function animationInit() {
     // splash animations to perform on page load
-    var paperMountain = document.querySelector('#header .mountain');
+    let paperMountain = document.querySelector('#header .mountain');
     paperMountain.classList.add('animate');
     paperMountain.style.transform = 'translate(-22px, 0)';
     paperMountain.style.strokeDashoffset = '0';
@@ -16,7 +16,7 @@ function animationInit() {
 
 function gridInit() {
     // setup mason grid after all images are loaded
-    var masonry = Macy({
+    let masonry = Macy({
         container: '#works-grid',
         trueOrder: false,
         waitForImages: true,
@@ -43,7 +43,7 @@ function navigationInit() {
     mobileNavigationButton.addEventListener('click', function () {
         toggleMobileMenu();
     });
-    var links = mobileNavigationPopupElement.querySelectorAll('a');
+    let links = mobileNavigationPopupElement.querySelectorAll('a');
     links.forEach(function (link) {
         link.addEventListener('click', function (e) {
             toggleMobileMenu();
@@ -63,10 +63,10 @@ function onWindowScroll(e) {
     // navigation
     // slides in when past header and scrolling up
     // slides out when scrolling down
-    var currentScrollY = window.scrollY;
-    var isScrollingDown = currentScrollY > lastScrollY; 
-    var headerHeight = document.querySelector('#header').clientHeight;
-    var documentHeight = document.body.clientHeight;
+    let currentScrollY = window.scrollY;
+    let isScrollingDown = currentScrollY > lastScrollY; 
+    let headerHeight = document.querySelector('#header').clientHeight;
+    let documentHeight = document.body.clientHeight;
     
     if (isMobileMenuOpen) {
         return; // do nothing if mobile menu is open
@@ -87,18 +87,18 @@ function onWindowScroll(e) {
     
     // paralax header mountain
     if (currentScrollY < headerHeight) {
-        var paperMountain = document.querySelector('#header .mountain');
-        var verticalShift = 50 * (currentScrollY + 1) /  headerHeight;
+        let paperMountain = document.querySelector('#header .mountain');
+        let verticalShift = 50 * (currentScrollY + 1) /  headerHeight;
         paperMountain.style.transform = `translate(-22px, ${verticalShift}px)`;
     }
 
     // paralax footer mountain
-    var footerElement = document.querySelector('#footer');
-    var footerViewPoint = footerElement.offsetTop - window.innerHeight;
+    let footerElement = document.querySelector('#footer');
+    let footerViewPoint = footerElement.offsetTop - window.innerHeight;
     if (currentScrollY >= footerViewPoint) {
-        var footerMountain = document.querySelector('#footer .mountain');
-        var distanceIntoFooter = currentScrollY - footerViewPoint;
-        var verticalShift = 100 - (100 * (distanceIntoFooter + 1) / footerElement.clientHeight);
+        let footerMountain = document.querySelector('#footer .mountain');
+        let distanceIntoFooter = currentScrollY - footerViewPoint;
+        let verticalShift = 100 - (100 * (distanceIntoFooter + 1) / footerElement.clientHeight);
         footerMountain.style.transform = `translate(-22px, ${verticalShift}px)`;
     }
 
