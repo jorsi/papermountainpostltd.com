@@ -4,13 +4,22 @@ var mobileNavigationElement;
 var mobileNavigationPopupElement;
 var mobileNavigationButton;
 var isMobileMenuOpen = false;
+var lastScrollY = 0;
 
-function toggleMobileMenu () {
-    mobileNavigationElement.classList.toggle('is-open');
-    mobileNavigationButton.classList.toggle('is-active');
-    mobileNavigationPopupElement.classList.toggle('is-open');
-
-    isMobileMenuOpen = !isMobileMenuOpen;
+function gridInit() {
+    // setup mason grid after all images are loaded
+    var masonry = Macy({
+        container: '#works-grid',
+        trueOrder: false,
+        waitForImages: true,
+        margin: 16,
+        mobileFirst: true,
+        columns: 1,
+        breakAt: {
+            768: 3,
+            400: 2
+        }
+    });
 }
 
 function navigationInit() {
@@ -33,12 +42,6 @@ function navigationInit() {
         });
     });
 
-    // slides in when past header and scrolling up
-    // slides out when scrolling down
-    window.addEventListener('scroll', onWindowScroll);
-
-    // make sure mobile menu closes when resizing
-    window.addEventListener('resize', onWindowResize);
 }
 
 function onWindowResize(e) {
@@ -47,8 +50,10 @@ function onWindowResize(e) {
     }
 }
 
-var lastScrollY = 0;
 function onWindowScroll(e) {
+    // navigation
+    // slides in when past header and scrolling up
+    // slides out when scrolling down
     var currentScrollY = window.scrollY;
     var isScrollingDown = currentScrollY > lastScrollY; 
     var headerHeight = document.querySelector('#header').clientHeight;
@@ -71,25 +76,24 @@ function onWindowScroll(e) {
     }
 
     lastScrollY = currentScrollY;
+
+    // animations
 }
-function gridInit() {
-    // setup mason grid after all images are loaded
-    var masonry = Macy({
-        container: '#works-grid',
-        trueOrder: false,
-        waitForImages: true,
-        margin: 16,
-        mobileFirst: true,
-        columns: 1,
-        breakAt: {
-            992: 5,
-            768: 3,
-            400: 2
-        }
-    });
+
+function toggleMobileMenu () {
+    mobileNavigationElement.classList.toggle('is-open');
+    mobileNavigationButton.classList.toggle('is-active');
+    mobileNavigationPopupElement.classList.toggle('is-open');
+
+    isMobileMenuOpen = !isMobileMenuOpen;
 }
 
 document.addEventListener("DOMContentLoaded", function() {
     navigationInit();
     gridInit();
+
+    window.addEventListener('scroll', onWindowScroll);
+
+    // make sure mobile menu closes when resizing
+    window.addEventListener('resize', onWindowResize);
  });

@@ -2,6 +2,21 @@
     background-color: var(--colour-green);
     color: var(--colour-dark);
     padding: 64px 0;
+    position: relative;
+    z-index: 2;
+
+    &::after {
+        background: url(/assets/breaker.png);
+        background-size: auto 100%;
+        bottom: 0;
+        content: " ";
+        display: block;
+        height: 64px;
+        left: 0;
+        position: absolute;
+        transform: translate(0,50%);
+        width: 100%;
+    }
 
     .services-list-item {
         &:not(:first-of-type) {
@@ -68,4 +83,5 @@
             }
         }
     }
+
 }

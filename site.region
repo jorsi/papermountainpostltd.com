@@ -123,9 +123,6 @@
           id="section5-description"
           class="section-description"/>
 
-      </div>
-
-      <div class="container">
 
         <squarespace:query collection="work">
         <div id="works-grid">
@@ -166,6 +163,7 @@
         </squarespace:query>
 
       </div>
+
     </section>
     
 
