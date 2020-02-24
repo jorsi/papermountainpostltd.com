@@ -82,11 +82,11 @@
       <div class="container max720">
 
         <squarespace:block-field 
-          id="section2-title"
+          id="services-title"
           class="section-title" />
 
         <squarespace:block-field 
-          id="section2-description" 
+          id="services-description" 
           class="section-description" />
 
 
@@ -118,11 +118,11 @@
       <div class="container max720">
 
         <squarespace:block-field 
-          id="section5-title" 
+          id="works-title" 
           class="section-title" />
         
         <squarespace:block-field 
-          id="section5-description"
+          id="works-description"
           class="section-description"/>
 
 
@@ -173,11 +173,11 @@
       <div class="container max720">
 
         <squarespace:block-field 
-          id="section3-title" 
+          id="about-title" 
           class="section-title" />
         
         <squarespace:block-field 
-          id="section3-description" 
+          id="about-description" 
           class="section-description" />
 
         <squarespace:query collection="team">
