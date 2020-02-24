@@ -32,16 +32,22 @@
         height: 100%;
     }
 
-    .service-image {
+    .service-image-container {
         border: 8px solid var(--colour-green);
         background-color: var(--colour-dark);
         border-radius: 50%;
-        width: 120px;
         height: 120px;
         margin-bottom: -60px;
-        padding: 32px;
-        object-fit: contain;
+        position: relative;
+        width: 120px;
         z-index: 1;
+    }
+    .service-image {
+        position: absolute;
+        top:50%;
+        left: 50%;
+        padding: 32px;
+        transform: translate(-50%,-50%);
     }
     .service-content {
         background-color: var(--colour-dark);

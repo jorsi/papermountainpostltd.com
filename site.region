@@ -96,8 +96,10 @@
                 {.repeated section items}
                   <li class="services-list-item">
                       <div class="service">
-                        <img src="{assetUrl}"
+                        <div class="service-image-container">
+                          <img src="{assetUrl}"
                           class="service-image" />
+                        </div>
                         <div class="service-content">
                           <h5 class="service-title">{title}</h5>
                           <p class="service-body">{body}</p>
