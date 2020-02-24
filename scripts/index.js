@@ -6,6 +6,14 @@ var mobileNavigationButton;
 var isMobileMenuOpen = false;
 var lastScrollY = 0;
 
+function animationInit() {
+    // splash animations to perform on page load
+    var paperMountain = document.querySelector('#header .mountain');
+    paperMountain.classList.add('animate');
+    paperMountain.style.transform = 'translate(-22px, 0)';
+    paperMountain.style.strokeDashoffset = '0';
+}
+
 function gridInit() {
     // setup mason grid after all images are loaded
     var masonry = Macy({
@@ -45,6 +53,7 @@ function navigationInit() {
 }
 
 function onWindowResize(e) {
+    // make sure mobile menu closes when resizing
     if (isMobileMenuOpen && window.innerWidth > 768) {
         toggleMobileMenu();
     }
@@ -75,9 +84,25 @@ function onWindowScroll(e) {
         }
     }
 
-    lastScrollY = currentScrollY;
+    
+    // paralax header mountain
+    if (currentScrollY < headerHeight) {
+        var paperMountain = document.querySelector('#header .mountain');
+        var verticalShift = 50 * (currentScrollY + 1) /  headerHeight;
+        paperMountain.style.transform = `translate(-22px, ${verticalShift}px)`;
+    }
 
-    // animations
+    // paralax footer mountain
+    var footerElement = document.querySelector('#footer');
+    var footerViewPoint = footerElement.offsetTop - window.innerHeight;
+    if (currentScrollY >= footerViewPoint) {
+        var footerMountain = document.querySelector('#footer .mountain');
+        var distanceIntoFooter = currentScrollY - footerViewPoint;
+        var verticalShift = 100 - (100 * (distanceIntoFooter + 1) / footerElement.clientHeight);
+        footerMountain.style.transform = `translate(-22px, ${verticalShift}px)`;
+    }
+
+    lastScrollY = currentScrollY;
 }
 
 function toggleMobileMenu () {
@@ -91,9 +116,8 @@ function toggleMobileMenu () {
 document.addEventListener("DOMContentLoaded", function() {
     navigationInit();
     gridInit();
+    animationInit();
 
     window.addEventListener('scroll', onWindowScroll);
-
-    // make sure mobile menu closes when resizing
     window.addEventListener('resize', onWindowResize);
  });

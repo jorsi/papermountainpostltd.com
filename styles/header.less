@@ -16,6 +16,14 @@
             fill:#eba396;
             stroke: #22222f;
             stroke-width: 1px;
+            stroke-dasharray: 500;
+            stroke-dashoffset: 500;
+            transform: translate(-22px, 50%);
+
+            &.animate {
+                transition: transform 1.5s cubic-bezier(0.175, 0.885, 0.32, 1), 
+                    stroke-dashoffset 3s ease-out;
+            }
         }
         .border {
             fill: transparent;
