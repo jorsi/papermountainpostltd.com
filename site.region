@@ -13,6 +13,7 @@
   <meta name="distribution" content="web">
   <meta name=”robots” content=”noodp”>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,700&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/28144df9a9.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/macy@2"></script>
   <squarespace:script src="index.js" />
